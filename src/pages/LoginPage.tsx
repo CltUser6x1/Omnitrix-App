@@ -1,17 +1,21 @@
 import { useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import { colors, styles } from "./styles";
+import { Text, View } from "react-native";
+import Button from "../components/Button";
+import Input from "../components/Input";
+import { colors } from "../styles/colors";
+import { styles } from "../styles/login-page";
 
-export default function LoginScreen({ onLoginSuccess }) {
+type LoginPageProps = {
+  onLoginSuccess: () => void;
+};
+
+export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
   const [usuario, setUsuario] = useState("");
-
   const [senha, setSenha] = useState("");
-
   const [mensagemErro, setMensagemErro] = useState("");
 
   const CREDENCIAIS = {
     usuario: "ben",
-
     senha: "10",
   };
 
@@ -20,23 +24,18 @@ export default function LoginScreen({ onLoginSuccess }) {
 
     if (!usuario.trim()) {
       setMensagemErro("⚠️ ALERTA: Informe o usuário do herói.");
-
       return;
     }
 
     if (!senha.trim()) {
       setMensagemErro("⚠️ ALERTA: Informe o código de segurança.");
-
       return;
     }
 
     if (usuario === CREDENCIAIS.usuario && senha === CREDENCIAIS.senha) {
       setUsuario("");
-
       setSenha("");
-
       setMensagemErro("");
-
       onLoginSuccess();
     } else {
       setMensagemErro("❌ ACESSO NEGADO: DNA incompatível.");
@@ -46,8 +45,6 @@ export default function LoginScreen({ onLoginSuccess }) {
   return (
     <View style={styles.loginContainer}>
       <View style={styles.loginCard}>
-        {/* Ícone Estilizado do Omnitrix */}
-
         <View style={styles.omnitrixBadge}>
           <Text style={styles.omnitrixBadgeText}>10</Text>
         </View>
@@ -65,8 +62,7 @@ export default function LoginScreen({ onLoginSuccess }) {
         <View style={styles.inputContainer}>
           <Text style={styles.inputLabel}>UTILIZADOR</Text>
 
-          <TextInput
-            style={styles.input}
+          <Input
             placeholder="ex: ben"
             placeholderTextColor={colors.textMuted}
             value={usuario}
@@ -78,8 +74,7 @@ export default function LoginScreen({ onLoginSuccess }) {
         <View style={styles.inputContainer}>
           <Text style={styles.inputLabel}>CÓDIGO SECRETO</Text>
 
-          <TextInput
-            style={styles.input}
+          <Input
             placeholder="ex: 10"
             placeholderTextColor={colors.textMuted}
             value={senha}
@@ -88,11 +83,15 @@ export default function LoginScreen({ onLoginSuccess }) {
           />
         </View>
 
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Button
+          style={styles.button}
+          onPress={handleLogin}
+          accessibilityRole="button"
+        >
           <Text style={styles.buttonText}>ATIVAR PROTOCOLO</Text>
-        </TouchableOpacity>
+        </Button>
 
-        <Text style={styles.hintText}>💡 Dica de acesso: ben / 10</Text>
+        <Text style={styles.hintText}>Dica de acesso: ben / 10</Text>
       </View>
     </View>
   );

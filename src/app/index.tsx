@@ -1,15 +1,16 @@
 
-import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { View } from 'react-native';
 
-import Login from '../../Login';
-import Navegacao from '../../Navegacao';
+import Login from '../pages/LoginPage';
+import Navegacao from '../navigation/Navegacao';
+import { globalStyles } from '../styles/global';
 
 export default function Index() {
   const [logado, setLogado] = useState(false);
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.screenContainer}>
       {logado ? (
         <Navegacao onLogout={() => setLogado(false)} />
       ) : (
@@ -18,10 +19,3 @@ export default function Index() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#050505',
-  },
-});

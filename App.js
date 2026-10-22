@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { SafeAreaView, StatusBar } from "react-native";
-import Login from "./Login";
-import Navegacao from "./Navegacao";
-import { colors, styles } from "./styles";
+import Navegacao from "./src/navigation/Navegacao";
+import Login from "./src/pages/LoginPage";
+import { colors } from "./src/styles/colors";
+import { globalStyles } from "./src/styles/global";
 
 export default function App() {
   const [logado, setLogado] = useState(false);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={globalStyles.safeArea}>
       <StatusBar barStyle="light-content" backgroundColor={colors.secondary} />
       {logado ? (
         <Navegacao onLogout={() => setLogado(false)} />
