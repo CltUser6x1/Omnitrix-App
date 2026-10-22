@@ -60,7 +60,7 @@ O objetivo do projeto é praticar a criação de interfaces, a organização dos
 
 ![Tela inicial 3](assets/images/T-Inicial3.png)
 
-![Tela inicial 4](assets/images/T-Inicias4.png)
+![Tela inicial 4](assets/images/T-Inicia4.png)
 
 ### Tela central
 
