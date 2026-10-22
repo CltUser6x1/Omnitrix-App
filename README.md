@@ -49,3 +49,27 @@ Após iniciar, siga as instruções exibidas no terminal para abrir o aplicativo
 ## Objetivo
 
 O objetivo do projeto é praticar a criação de interfaces, a organização dos componentes e a navegação entre telas em um aplicativo mobile, usando o universo de Ben 10 como tema.
+
+### Telas
+
+### Tela inicial
+
+![Tela inicial](assets/images/T-Inicial.png)
+
+![Tela inicial 2](assets/images/T-Inicial2.png)
+
+![Tela inicial 3](assets/images/T-Inicial3.png)
+
+![Tela inicial 4](assets/images/T-Inicias4.png)
+
+### Tela central
+
+![Tela central](assets/images/T-Central.png)
+
+### Tela Sobre
+
+![Tela Sobre](assets/images/T-Sobre.png)
+
+### Tela de Contato
+
+![Tela de Contato](assets/images/T-Contato.png)
